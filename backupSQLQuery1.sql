@@ -1,0 +1,1 @@
+﻿DELETE FROM contacts WHERE ID = 5;

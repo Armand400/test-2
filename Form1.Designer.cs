@@ -28,36 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            textBox2 = new TextBox();
+            Bajouter = new Button();
+            emailadd = new TextBox();
             label1 = new Label();
             label3 = new Label();
             dataGridView1 = new DataGridView();
-            textBox1 = new TextBox();
+            nomadd = new TextBox();
+            TBnomedit = new TextBox();
+            TBemailedit = new TextBox();
+            Lnomedit = new Label();
+            Lemailedit = new Label();
+            Bedit = new Button();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // Bajouter
             // 
-            button1.Location = new Point(43, 226);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
+            Bajouter.Location = new Point(41, 202);
+            Bajouter.Name = "Bajouter";
+            Bajouter.Size = new Size(94, 29);
+            Bajouter.TabIndex = 0;
+            Bajouter.Text = "Ajouter";
+            Bajouter.UseVisualStyleBackColor = true;
+            Bajouter.Click += button1_Click_1;
             // 
-            // textBox2
+            // emailadd
             // 
-            textBox2.Location = new Point(43, 136);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 2;
+            emailadd.Location = new Point(41, 138);
+            emailadd.Name = "emailadd";
+            emailadd.Size = new Size(125, 27);
+            emailadd.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(43, 113);
+            label1.Location = new Point(41, 115);
             label1.Name = "label1";
             label1.Size = new Size(46, 20);
             label1.TabIndex = 3;
@@ -65,7 +71,7 @@
             // 
             // label3
             // 
-            label3.Location = new Point(43, 38);
+            label3.Location = new Point(41, 40);
             label3.Name = "label3";
             label3.Size = new Size(100, 23);
             label3.TabIndex = 6;
@@ -73,32 +79,87 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.BackgroundColor = SystemColors.ActiveBorder;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(258, 47);
+            dataGridView1.Location = new Point(211, 24);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(449, 188);
+            dataGridView1.Size = new Size(671, 290);
             dataGridView1.TabIndex = 4;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // textBox1
+            // nomadd
             // 
-            textBox1.Location = new Point(43, 64);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 5;
+            nomadd.Location = new Point(41, 66);
+            nomadd.Name = "nomadd";
+            nomadd.Size = new Size(125, 27);
+            nomadd.TabIndex = 5;
+            // 
+            // TBnomedit
+            // 
+            TBnomedit.Location = new Point(343, 370);
+            TBnomedit.Name = "TBnomedit";
+            TBnomedit.Size = new Size(125, 27);
+            TBnomedit.TabIndex = 7;
+            TBnomedit.Visible = false;
+            // 
+            // TBemailedit
+            // 
+            TBemailedit.Location = new Point(563, 370);
+            TBemailedit.Name = "TBemailedit";
+            TBemailedit.Size = new Size(125, 27);
+            TBemailedit.TabIndex = 8;
+            TBemailedit.Visible = false;
+            // 
+            // Lnomedit
+            // 
+            Lnomedit.AutoSize = true;
+            Lnomedit.Location = new Point(343, 347);
+            Lnomedit.Name = "Lnomedit";
+            Lnomedit.Size = new Size(42, 20);
+            Lnomedit.TabIndex = 9;
+            Lnomedit.Text = "Nom";
+            Lnomedit.Visible = false;
+            // 
+            // Lemailedit
+            // 
+            Lemailedit.AutoSize = true;
+            Lemailedit.Location = new Point(563, 347);
+            Lemailedit.Name = "Lemailedit";
+            Lemailedit.Size = new Size(46, 20);
+            Lemailedit.TabIndex = 10;
+            Lemailedit.Text = "Email";
+            Lemailedit.Visible = false;
+            // 
+            // Bedit
+            // 
+            Bedit.Location = new Point(735, 368);
+            Bedit.Name = "Bedit";
+            Bedit.Size = new Size(94, 29);
+            Bedit.TabIndex = 11;
+            Bedit.Text = "Modifier";
+            Bedit.UseVisualStyleBackColor = true;
+            Bedit.Visible = false;
+            Bedit.Click += Bedit_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(873, 316);
-            Controls.Add(textBox1);
+            ClientSize = new Size(936, 452);
+            Controls.Add(Bedit);
+            Controls.Add(Lemailedit);
+            Controls.Add(Lnomedit);
+            Controls.Add(TBemailedit);
+            Controls.Add(TBnomedit);
+            Controls.Add(nomadd);
             Controls.Add(dataGridView1);
             Controls.Add(label3);
             Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(button1);
+            Controls.Add(emailadd);
+            Controls.Add(Bajouter);
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -108,11 +169,18 @@
 
         #endregion
 
-        private Button button1;
-        private TextBox textBox2;
+        private Button Bajouter;
+        private TextBox emailadd;
         private Label label1;
         private Label label3;
         private DataGridView dataGridView1;
         private TextBox textBox1;
+        private TextBox TBnomedit;
+        private TextBox TBemailedit;
+        private Label Lnomedit;
+        private Label Lemailedit;
+        private Button Bedit;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private TextBox nomadd;
     }
 }
